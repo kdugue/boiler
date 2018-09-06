@@ -6,11 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(morgan("dev"));
 
-app.use(
-  express.static(
-    path.join(__dirname, "/Users/KemetDugue/Desktop/boiler/public/index.html")
-  )
-);
+app.use(express.static(path.join(__dirname, "../public/")));
 
 app.use("/api", require("./api"));
 
@@ -21,9 +17,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get("*", (req, res, next) => {
-  res.sendFile(
-    path.join(__dirname, "/Users/KemetDugue/Desktop/boiler/public/index.html")
-  );
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 app.listen(port, () => {

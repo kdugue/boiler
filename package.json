@@ -4,13 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start-server & npm run build-watch",
+    "start-server": "nodemon server/index.js",
+    "build-watch": "webpack -w"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
     "morgan": "^1.9.0",
-    "path": "^0.12.7"
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   }
 }
