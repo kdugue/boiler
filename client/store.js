@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware } from "redux";
-import { createLogger } from "redux-logger";
+import loggingMiddleware from "redux-logger";
 import thunkMiddleware from "redux-thunk";
+import rootReducer from "./reducers";
+import axios from "axios";
 
 let initialState = {};
 
@@ -13,6 +15,12 @@ const reducer = (prevState = initialState, action) => {
   }
 };
 
-const store = createStore(reducer, applyMiddleware(thunkMiddleware));
-
-export default store;
+export default createStore(
+  rootReducer,
+  applyMiddleware(
+    // `withExtraArgument` gives us access to axios in our async action creators!
+    // https://github.com/reduxjs/redux-thunk#injecting-a-custom-argument
+    thunkMiddleware.withExtraArgument({ axios }),
+    loggingMiddleware
+  )
+);
