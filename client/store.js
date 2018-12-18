@@ -4,16 +4,11 @@ import thunkMiddleware from "redux-thunk";
 import rootReducer from "./reducers";
 import axios from "axios";
 
-let initialState = {};
+//actions
 
-const reducer = (prevState = initialState, action) => {
-  let newState = Object.assign({}, prevState);
+//action creators
 
-  switch (action.type) {
-    default:
-      return prevState;
-  }
-};
+//thunk creators
 
 export default createStore(
   rootReducer,
