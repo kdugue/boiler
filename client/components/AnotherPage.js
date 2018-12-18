@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-class App extends Component {
+class AnotherPage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return <div>Hello this is the App Page</div>;
+    return <div>Hello this is the Another Page</div>;
   }
 }
 
-export default App;
+export default AnotherPage;
