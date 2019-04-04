@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import App from "./App";
-import AnotherPage from "./AnotherPage";
+import ButtonTest from "./ButtonTest";
 
 const Root = () => {
   return (
@@ -12,7 +12,7 @@ const Root = () => {
         </nav>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/test" component={AnotherPage} />
+          <Route exact path="/button" component={ButtonTest} />
         </Switch>
       </div>
     </Router>
